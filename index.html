@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Next! Help Center</title>
+<meta name="description" content="Help, setup steps and answers to common questions for Next!, the classroom help line and hall pass app by Bellwork Labs.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M12 6h24a9 9 0 0 1 9 9v13a9 9 0 0 1-9 9H20l-9 7 2-7.4A9 9 0 0 1 3 28V15a9 9 0 0 1 9-9z' fill='%23d7263d'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Nunito:wght@600;700;800;900&display=swap">
+<style>
+:root{
+  --bg:#eef6f4; --panel:#ffffff; --panel2:#fffaf0; --line:#dfe6ea; --ink:#23263a; --ink2:#3d4a5c; --muted:#5d6b78;
+  --red:#d7263d; --red-dk:#a51b2e; --navy:#1f3a5f; --paper:#fff6d6; --gold:#e8a812; --tint:#e4f1ee; --chip:#f1f4f7;
+  --display:'Bagel Fat One','Arial Rounded MT Bold','Trebuchet MS',system-ui,sans-serif;
+  --body:'Nunito','Trebuchet MS',system-ui,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#141821; --panel:#1d2330; --panel2:#222a38; --line:#323b4c; --ink:#eef1f6; --ink2:#c9d1dd; --muted:#9aa6b6;
+    --red:#ff5a6e; --red-dk:#ff8a98; --navy:#9cc3ec; --paper:#2b2a22; --tint:#1a2a2a; --chip:#273042; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#141821; --panel:#1d2330; --panel2:#222a38; --line:#323b4c; --ink:#eef1f6; --ink2:#c9d1dd; --muted:#9aa6b6;
+  --red:#ff5a6e; --red-dk:#ff8a98; --navy:#9cc3ec; --paper:#2b2a22; --tint:#1a2a2a; --chip:#273042; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-weight:600;font-size:17px;line-height:1.55}
+a{color:var(--navy);font-weight:800}
+a:hover{color:var(--red)}
+.wrap{max-width:900px;margin:0 auto;padding:0 16px}
+header.top{background:var(--panel);border-bottom:3px solid var(--tint)}
+header.top .wrap{display:flex;align-items:center;gap:12px;padding-top:12px;padding-bottom:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--red);font-family:var(--display);font-size:28px;line-height:1;font-weight:400}
+.brand svg{width:42px;height:42px;flex:none}
+.brand small{font-family:var(--body);font-weight:800;color:var(--muted);font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+nav.links{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
+nav.links a{text-decoration:none;font-size:14px;color:var(--ink2);padding:6px 10px;border-radius:8px}
+nav.links a:hover{background:var(--chip);color:var(--ink)}
+.hero{padding:36px 0 18px}
+.hero h1{font-family:var(--display);font-weight:400;color:var(--red);font-size:clamp(32px,6vw,48px);line-height:1.05;margin:0 0 8px}
+.hero p{margin:0;color:var(--ink2);font-size:18px;max-width:640px}
+.search{margin-top:20px;position:relative}
+.search input{width:100%;font:inherit;font-weight:700;font-size:18px;padding:14px 16px 14px 46px;border-radius:14px;border:2px solid var(--line);background:var(--panel);color:var(--ink)}
+.search input:focus{outline:none;border-color:var(--navy)}
+.search svg{position:absolute;left:15px;top:50%;transform:translateY(-50%);width:20px;height:20px;color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin:18px 0 6px}
+.card{display:block;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;text-decoration:none;color:var(--ink)}
+.card:hover{border-color:var(--navy);color:var(--ink)}
+.card b{display:block;font-size:16px;font-weight:900}
+.card span{display:block;font-size:14px;color:var(--muted);font-weight:700;line-height:1.35;margin-top:2px}
+section{padding:26px 0 6px}
+h2{font-family:var(--display);font-weight:400;color:var(--navy);font-size:28px;margin:0 0 6px;line-height:1.15}
+h3.cat{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:22px 0 8px;font-weight:900}
+.lead{color:var(--ink2);margin:0 0 14px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+ol.steps{counter-reset:s;list-style:none;margin:0;padding:0}
+ol.steps>li{counter-increment:s;position:relative;padding:12px 0 12px 48px;border-top:1px solid var(--line)}
+ol.steps>li:first-child{border-top:0}
+ol.steps>li::before{content:counter(s);position:absolute;left:0;top:11px;width:32px;height:32px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-weight:900;font-size:16px}
+ol.steps b{color:var(--ink)}
+.tip{background:var(--paper);border-left:5px solid var(--gold);border-radius:10px;padding:10px 14px;margin:12px 0 0;font-size:16px}
+details.q{background:var(--panel);border:1px solid var(--line);border-radius:14px;margin:8px 0;overflow:hidden}
+details.q summary{cursor:pointer;list-style:none;padding:14px 48px 14px 18px;font-weight:900;font-size:17px;position:relative;color:var(--ink)}
+details.q summary::-webkit-details-marker{display:none}
+details.q summary::after{content:"";position:absolute;right:20px;top:50%;width:10px;height:10px;border-right:3px solid var(--muted);border-bottom:3px solid var(--muted);transform:translateY(-70%) rotate(45deg);transition:transform .2s}
+details.q[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+details.q summary:hover{background:var(--panel2)}
+details.q .a{padding:0 18px 16px;color:var(--ink2)}
+details.q .a p{margin:8px 0}
+details.q .a ul,details.q .a ol{margin:8px 0;padding-left:22px}
+details.q .a li{margin:4px 0}
+.path{display:inline-block;background:var(--chip);border-radius:6px;padding:0 6px;font-weight:800;color:var(--ink);white-space:nowrap}
+.none{display:none;color:var(--muted);padding:12px 4px}
+mark{background:#ffe08a;color:#23263a;border-radius:3px;padding:0 1px}
+.contact{display:grid;grid-template-columns:1.1fr 1fr;gap:18px;align-items:start}
+.email{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:10px 0 4px}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:12px;padding:11px 16px;font:inherit;font-weight:900;font-size:16px;cursor:pointer;text-decoration:none}
+.btn.go{background:var(--red);color:#fff}
+.btn.go:hover{background:var(--red-dk);color:#fff}
+.btn.plain{background:var(--chip);color:var(--ink)}
+.addr{font-size:19px;font-weight:900;color:var(--ink);word-break:break-all}
+.check li{margin:5px 0}
+.warn{background:var(--tint);border-radius:10px;padding:10px 14px;font-size:15px;margin-top:12px}
+.ver{border-left:4px solid var(--navy);padding:4px 0 4px 14px;margin:6px 0 14px}
+.ver b{font-size:18px}
+.ver ul{margin:6px 0;padding-left:20px}
+footer{margin-top:36px;padding:22px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-between}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-weight:800;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.on{opacity:1}
+@media (max-width:700px){
+  body{font-size:16px}
+  nav.links{display:none}
+  .contact{grid-template-columns:1fr}
+  .hero{padding-top:24px}
+  ol.steps>li{padding-left:44px}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Next! Help Center home">
+      <svg viewBox="0 0 48 48" aria-hidden="true">
+        <path d="M12 6h24a9 9 0 0 1 9 9v13a9 9 0 0 1-9 9H20l-9 7 2-7.4A9 9 0 0 1 3 28V15a9 9 0 0 1 9-9z" fill="#d7263d"/>
+        <g transform="rotate(-8 24 21.5)">
+          <path d="M11 14h26v5.2a2.3 2.3 0 0 0 0 4.6V29H11v-5.2a2.3 2.3 0 0 0 0-4.6z" fill="#fff6d6"/>
+          <line x1="16.5" y1="15.5" x2="16.5" y2="27.5" stroke="#d7263d" stroke-width="1.2" stroke-dasharray="1.6 1.6"/>
+          <text x="27" y="26.2" text-anchor="middle" font-family="'Bagel Fat One','Arial Rounded MT Bold',sans-serif" font-size="11.5" fill="#d7263d">01</text>
+        </g>
+        <circle cx="41" cy="8" r="5.2" fill="#ffd166" stroke="#23263a" stroke-width="1.6"/>
+        <path d="M41 5.2v3.4" stroke="#23263a" stroke-width="1.8" stroke-linecap="round"/><circle cx="41" cy="10.8" r="1" fill="#23263a"/>
+      </svg>
+      <span>Next!</span> <small>Help Center</small>
+    </a>
+    <nav class="links" aria-label="Sections">
+      <a href="#start">Getting started</a>
+      <a href="#faq">FAQ</a>
+      <a href="#updates">Updates</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+    <div class="hero">
+      <h1>How can we help?</h1>
+      <p>Setup steps and answers for Next!, the help line and hall pass for your classroom board.</p>
+      <div class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+        <input id="q" type="search" placeholder="Search: PIN, backup, Google Sheets, Chromebook..." aria-label="Search the help center" autocomplete="off">
+      </div>
+      <div class="cards">
+        <a class="card" href="#start"><b>Open Next! the first time</b><span>Unzip, save it, and set your PIN</span></a>
+        <a class="card" href="#saving"><b>My reports disappeared</b><span>Why it happens and how to get them back</span></a>
+        <a class="card" href="#sheets"><b>Google Sheets</b><span>Setup and fixes for auto-send</span></a>
+        <a class="card" href="#contact"><b>Still stuck?</b><span>Email Bellwork Labs</span></a>
+      </div>
+    </div>
+
+    <section id="start" aria-labelledby="startH">
+      <h2 id="startH">Getting started</h2>
+      <p class="lead">Next! is a single file that opens in your web browser. No account, no install, and no internet needed once it's open.</p>
+      <div class="panel">
+        <ol class="steps">
+          <li><b>Unzip the download.</b> On Windows, right-click the ZIP file and choose <span class="path">Extract All</span>. On a Mac, double-click it. On a Chromebook, open the ZIP in the Files app and copy the file out. Opening the file while it's still inside the ZIP can keep it from saving.</li>
+          <li><b>Put the file somewhere permanent.</b> Move <span class="path">Next-Classroom-Line.html</span> to your Documents folder or Desktop (on a Chromebook, <span class="path">My files</span>). Avoid Downloads, which some computers clean out. Keep it in the same place from now on.</li>
+          <li><b>Double-click to open it in Chrome or Edge.</b> If it opens in a different browser, right-click the file and choose <span class="path">Open with &rsaquo; Google Chrome</span> (or Microsoft Edge).</li>
+          <li><b>Make it one click away.</b> Bookmark the page or drag it to your bookmarks bar so it's easy to open every morning.</li>
+          <li><b>Set up your class.</b> Tap <span class="path">Settings</span> and create your 4-digit teacher PIN. Then name your classes, choose typed names or rosters, and set your hall pass rules, including the places students can go.</li>
+          <li><b>Show your students.</b> Drag the ticket left for help or right for a hall pass. Tap <span class="path">How it works</span> anytime to show the welcome screen again.</li>
+        </ol>
+        <p class="tip"><b>Tip:</b> The example students on the board leave as soon as a real student takes a ticket, or tap <span class="path">Start my class</span>.</p>
+      </div>
+    </section>
+
+    <section id="faq" aria-labelledby="faqH">
+      <h2 id="faqH">Frequently asked questions</h2>
+      <p class="lead">Tap a question to open it, or use the search box above.</p>
+
+      <h3 class="cat" id="basics">Basics</h3>
+      <details class="q"><summary>Do I need internet, an account, or a website?</summary><div class="a">
+        <p>No. Next! is one HTML file that runs in your browser. Double-click it and it opens like a web page. You don't need to upload it anywhere. Internet is only used for the fonts and the optional Google Sheets feature.</p>
+      </div></details>
+      <details class="q"><summary>Which browsers and devices work?</summary><div class="a">
+        <ul>
+          <li><b>Best:</b> Google Chrome or Microsoft Edge on a Windows PC, Mac, Chromebook, or interactive board connected to one.</li>
+          <li><b>Usually fine:</b> Firefox and Safari, but Chrome or Edge are recommended.</li>
+          <li><b>iPads and phones:</b> opening a downloaded HTML file on an iPad is unreliable. To use Next! on an iPad, put it on a Google Site (see below) and open that page instead.</li>
+        </ul>
+      </div></details>
+      <details class="q"><summary>My district blocks opening files in Chrome. What can I do?</summary><div class="a">
+        <p>A few districts lock down Chrome so it can't open files from the computer. You can put Next! on a Google Site instead:</p>
+        <ol>
+          <li>Open the Next! file in a text editor (Notepad on Windows, TextEdit on a Mac) and copy everything.</li>
+          <li>In Google Sites, choose <span class="path">Insert &rsaquo; Embed &rsaquo; Embed code</span>, paste, and click <span class="path">Next</span> then <span class="path">Insert</span>.</li>
+          <li>Make the box as large as the page, then publish the site and open it on your board.</li>
+        </ol>
+        <p>Inside Google Sites, some browsers and school accounts don't keep saved data as reliably. Open <span class="path">Reports</span> and check the saving message at the bottom, and save a backup file each week.</p>
+      </div></details>
+      <details class="q"><summary>Can I use Next! on more than one computer?</summary><div class="a">
+        <p>Yes, but each computer and browser keeps its own records. To move everything to another computer, use a backup file (see <a href="#saving">Saving and your data</a>). To collect records from several computers in one place, use <a href="#sheets">Google Sheets auto-send</a> or download a spreadsheet from each one.</p>
+      </div></details>
+      <details class="q"><summary>Can I use it with more than one class or period?</summary><div class="a">
+        <p>Yes, up to 7. Name them in <span class="path">Settings &rsaquo; Classes</span>. When a new class starts, pick it from the <span class="path">Class</span> menu at the top of the board. If students are still in line from the last class, Next! asks whether to keep them or clear the line. Reports can be filtered by class.</p>
+      </div></details>
+
+      <h3 class="cat" id="pin">Teacher PIN</h3>
+      <details class="q"><summary>What is the teacher PIN for?</summary><div class="a">
+        <p>The 4-digit PIN keeps students out of Settings and Reports, and out of tapping another student to send or remove them. After you enter it, teacher mode stays unlocked for 5 minutes. Tap <span class="path">Teacher mode &middot; tap to lock</span> to lock it sooner.</p>
+      </div></details>
+      <details class="q"><summary>I forgot my PIN.</summary><div class="a">
+        <p>On the PIN screen, tap <span class="path">Forgot PIN?</span> then <span class="path">Erase and reset</span>. To protect student privacy, this erases the PIN, settings, rosters and every report on that computer. There is no way around this, and Bellwork Labs can't see or recover your data.</p>
+        <p>If you have a backup file, set a new PIN, then open <span class="path">Reports &rsaquo; Restore backup &rsaquo; Open a backup file</span> to bring your classes and records back.</p>
+      </div></details>
+
+      <h3 class="cat" id="students">Students and lines</h3>
+      <details class="q"><summary>Should students type their names or use a roster?</summary><div class="a">
+        <p><b>Typed names:</b> students type their first name (you can also ask for a last initial). The keyboard has letters only, and inappropriate words are blocked.</p>
+        <p><b>Rosters:</b> students tap their name from a list. In <span class="path">Settings &rsaquo; Student names</span>, choose Roster, then paste names or upload a CSV or text file for each class. Rosters avoid typos and make reports cleaner.</p>
+      </div></details>
+      <details class="q"><summary>How do I send a student now, move them up, or take them out of line?</summary><div class="a">
+        <p>Tap the student on the board (or in the list) and enter your PIN. For a hall pass, choose <b>Send now</b> or <b>Remove from line</b>. For the help line, choose <b>Help next</b> to move them to the front, or <b>Remove from line</b>. Students sent early are still timed, and reports mark them "Sent by teacher."</p>
+      </div></details>
+      <details class="q"><summary>A student forgot to tap I'm back.</summary><div class="a">
+        <p>Tap <span class="path">I'm back</span> for them, or open <span class="path">Reports &rsaquo; Now</span> and tap <span class="path">Mark back</span> next to their name. The trip time ends when you tap, so the report may show a longer trip.</p>
+      </div></details>
+      <details class="q"><summary>How do I limit hall passes?</summary><div class="a">
+        <p>In <span class="path">Settings &rsaquo; Hall pass rules</span> you can:</p>
+        <ul>
+          <li>Set how many students can be out at once (1 to 5). Others wait in line and go automatically.</li>
+          <li>Close passes for the first and last 5, 10 or 15 minutes of class. Set each class's start and end times in <span class="path">Settings &rsaquo; Classes</span>.</li>
+          <li>Limit trips per student per day or per week. You can override the limit with your PIN.</li>
+          <li>Pick the places students can go, and which ones skip the line.</li>
+        </ul>
+        <p>To flag long trips, choose a time limit in <span class="path">Settings &rsaquo; Display</span>. Timers turn amber at that time and red at double.</p>
+      </div></details>
+      <details class="q"><summary>Why do the Nurse and Office skip the line?</summary><div class="a">
+        <p>Some places shouldn't wait. In <span class="path">Settings &rsaquo; Hall pass rules</span>, places listed under "Go now" let a student leave right away and don't count toward the out-at-once limit. You can turn any place on or off.</p>
+      </div></details>
+
+      <h3 class="cat" id="display">Display and customizing</h3>
+      <details class="q"><summary>Can I turn off the characters and just show a list?</summary><div class="a">
+        <p>Yes. Choose <span class="path">Settings &rsaquo; Display &rsaquo; Board style &rsaquo; List</span>, or tap <span class="path">List view</span> in the top bar. Switch back anytime. Students in line stay put.</p>
+      </div></details>
+      <details class="q"><summary>Can I add my school's logo and colors?</summary><div class="a">
+        <p>Yes. In <span class="path">Settings &rsaquo; Make it yours</span>, add your school name, upload a logo (PNG or JPG works best), and pick primary and secondary colors. The logo appears on the classroom wall and in the top bar, and the teacher's outfit matches your primary color. <span class="path">Reset colors</span> goes back to the original look.</p>
+      </div></details>
+      <details class="q"><summary>Can I turn off the sounds or animations?</summary><div class="a">
+        <p>Yes, in <span class="path">Settings &rsaquo; Display</span>. Turning off animations gives a calmer board for students who are easily distracted.</p>
+      </div></details>
+
+      <h3 class="cat" id="saving">Saving and your data</h3>
+      <details class="q"><summary>Where is my data stored? Who can see it?</summary><div class="a">
+        <p>Everything is saved inside your browser on that one computer. Nothing is sent to Bellwork Labs. Records only leave the computer if you download a spreadsheet, save a backup file, or turn on Google Sheets auto-send to your own Google account.</p>
+        <p>Next! asks for first names only and has no student logins. Check your school's rules for storing student information.</p>
+      </div></details>
+      <details class="q"><summary>My reports, settings or rosters disappeared.</summary><div class="a">
+        <p>Saved data belongs to one browser on one computer. The usual causes:</p>
+        <ul>
+          <li>The browser's history or site data was cleared. Some school computers do this every night.</li>
+          <li>Next! was opened in a different browser, a different Chrome profile, or a private (incognito) window.</li>
+          <li>The file was opened from inside the ZIP, or moved or renamed.</li>
+          <li>On a Google Site, the embed was replaced or edited.</li>
+        </ul>
+        <p>To get it back, open your most recent backup file (<span class="path">Reports &rsaquo; Restore backup &rsaquo; Open a backup file</span>). To check whether saving works on your computer, open <span class="path">Reports</span> and read the message at the bottom.</p>
+      </div></details>
+      <details class="q"><summary>How do I back up, and how often?</summary><div class="a">
+        <p>Open <span class="path">Reports</span> and tap <span class="path">Save backup file</span>. It saves your settings, rosters, branding and every record. Keep it in Google Drive or OneDrive. Once a week is a good habit, and always before you clear your browser or update Next!.</p>
+        <p>To restore, tap <span class="path">Restore backup &rsaquo; Open a backup file</span>. Records you already have are skipped, so restoring twice won't create duplicates.</p>
+      </div></details>
+      <details class="q"><summary>How do I move Next! to a new computer?</summary><div class="a">
+        <ol>
+          <li>On the old computer, tap <span class="path">Reports &rsaquo; Save backup file</span>.</li>
+          <li>Copy the Next! file and the backup file to the new computer (a flash drive, Drive or OneDrive works).</li>
+          <li>Open Next! on the new computer, create a PIN, and use <span class="path">Restore backup &rsaquo; Open a backup file</span>.</li>
+        </ol>
+      </div></details>
+      <details class="q"><summary>How do I erase student data at the end of the year?</summary><div class="a">
+        <p>Download a spreadsheet first if you need to keep a record. Then open <span class="path">Reports</span> and tap <span class="path">Erase log</span>. To also clear rosters, remove them in <span class="path">Settings &rsaquo; Student names</span>. To erase everything, including your PIN and settings, use <span class="path">Forgot PIN? &rsaquo; Erase and reset</span>.</p>
+      </div></details>
+
+      <h3 class="cat" id="reports">Reports and spreadsheets</h3>
+      <details class="q"><summary>What do the reports show?</summary><div class="a">
+        <p>Reports has four tabs: <b>Now</b> (who's out and waiting), <b>Hall passes</b>, <b>Help line</b>, and <b>Students</b>. Tap any student's name for their own report: trips, minutes out, favorite places, time of day, help sessions, and how they compare to the class average. Filter by date range, class and place.</p>
+      </div></details>
+      <details class="q"><summary>How do I get my records into Excel or Google Sheets?</summary><div class="a">
+        <p>Open <span class="path">Reports</span> and tap <span class="path">Download spreadsheet</span>. You get an Excel file (.xlsx) with three tabs: Hall passes, Help line and Students. It opens in Excel, Google Sheets or Numbers. Choose <span class="path">Since my last download</span> to get only new rows, which makes it easy to add them to a running spreadsheet.</p>
+        <p>You can also tap <span class="path">Copy for a spreadsheet</span> and paste right into any spreadsheet.</p>
+      </div></details>
+      <details class="q"><summary>The download button doesn't do anything.</summary><div class="a">
+        <p>Downloads can be blocked when Next! runs inside another page, like a Google Site or a preview window. Open the Next! file directly in Chrome or Edge and try again. Also check your browser's downloads list. The file may have saved without a pop-up.</p>
+      </div></details>
+
+      <h3 class="cat" id="sheets">Google Sheets auto-send</h3>
+      <details class="q"><summary>What is auto-send, and do I need it?</summary><div class="a">
+        <p>It's an optional bonus for schools that use Google. Once it's set up, every finished hall pass and help session is added to a Google Sheet in your own Drive automatically. It's handy for sharing with an administrator or case manager, or as an always-current backup of your records. If you don't use Google, the <span class="path">Download spreadsheet</span> button does the same job by hand.</p>
+      </div></details>
+      <details class="q"><summary>How do I set it up?</summary><div class="a">
+        <ol>
+          <li>In Google Drive, make a new Google Sheet. Name it something like <b>Next! records</b>.</li>
+          <li>In that sheet, click <span class="path">Extensions &rsaquo; Apps Script</span>.</li>
+          <li>In Next!, open <span class="path">Settings &rsaquo; Send to Google Sheets</span> and tap <span class="path">Copy setup code</span>. Back in Apps Script, delete what's there, paste, and click the Save icon.</li>
+          <li>Click <span class="path">Deploy &rsaquo; New deployment</span>. Click the gear and pick <span class="path">Web app</span>. Set <b>Execute as: Me</b> and <b>Who has access: Anyone</b> (or your school's option). Click <span class="path">Deploy</span>.</li>
+          <li>Click <span class="path">Authorize access</span> and choose your account.</li>
+          <li>Copy the <b>Web app URL</b> (it ends in <b>/exec</b>), paste it into Next!, and tap <span class="path">Test connection</span>.</li>
+        </ol>
+        <p>To send records you already have, tap <span class="path">Send my past records</span>.</p>
+      </div></details>
+      <details class="q"><summary>Google says "Google hasn't verified this app." Is that safe?</summary><div class="a">
+        <p>Yes. Google shows this for any script you make yourself, since you are the app's author. Click <span class="path">Advanced</span>, then <span class="path">Go to</span> your project, then <span class="path">Allow</span>. The script can only add rows to that one spreadsheet. It can't read or change anything else in your Drive.</p>
+      </div></details>
+      <details class="q"><summary>Test connection says it couldn't connect.</summary><div class="a">
+        <ul>
+          <li>Make sure you copied the <b>Web app URL</b> that ends in <b>/exec</b>, not the address of the spreadsheet or the script editor.</li>
+          <li>Check <b>Who has access</b>. If you chose your school's option instead of Anyone, the board's browser must be signed in to your school Google account.</li>
+          <li>If you changed the code after deploying, choose <span class="path">Deploy &rsaquo; Manage deployments</span>, click the pencil, set Version to <b>New version</b>, and deploy again.</li>
+          <li>Some districts turn off Apps Script web apps. If the steps above don't help, ask your tech department, or use <span class="path">Download spreadsheet</span> instead.</li>
+          <li>Next! won't connect inside a preview window. Open the file directly in Chrome or Edge.</li>
+        </ul>
+      </div></details>
+      <details class="q"><summary>What if the internet goes down?</summary><div class="a">
+        <p>Nothing is lost. Next! keeps records that couldn't be sent and tries again every minute. The status line in Settings shows how many are waiting.</p>
+      </div></details>
+      <details class="q"><summary>Will I get duplicate rows?</summary><div class="a">
+        <p>No. Each row has a Record ID, and rows already in your sheet are skipped. Please don't delete or move the Record ID column. You can sort, filter, add columns to the right, or make new tabs for charts.</p>
+      </div></details>
+      <details class="q"><summary>Can my whole team share one sheet?</summary><div class="a">
+        <p>Yes. One person sets up the sheet and shares the Web app URL with the team. Each teacher pastes it into Next! and fills in <span class="path">Room or teacher name</span> so every row shows where it came from. Treat the URL like a password: anyone who has it can add rows (but can't read the sheet).</p>
+      </div></details>
+      <details class="q"><summary>Does auto-send work with Microsoft Excel or OneDrive?</summary><div class="a">
+        <p>Not automatically. Google lets anyone make the small receiving script for free. Microsoft's version requires a premium license most schools don't have. Microsoft schools get the same records with <span class="path">Download spreadsheet</span>, which opens right in Excel.</p>
+      </div></details>
+    </section>
+    <p class="none" id="noHits">No answers matched. Try a different word, or <a href="#contact">email Bellwork Labs</a>.</p>
+
+    <section id="updates" aria-labelledby="updH">
+      <h2 id="updH">Updates</h2>
+      <div class="panel">
+        <details class="q" style="border:0;margin:0"><summary style="padding-left:0">How do I get a new version?</summary><div class="a" style="padding-left:0">
+          <ol>
+            <li>Open Next! and tap <span class="path">Reports &rsaquo; Save backup file</span>, just in case.</li>
+            <li>On Teachers Pay Teachers, go to <span class="path">My Purchases</span> and download Next! again. Updates are free.</li>
+            <li>Unzip it and put the new file in the <b>same folder with the same name</b> as your old one, replacing it.</li>
+            <li>Open it as usual. Your settings, rosters and records will still be there. If anything is missing, use <span class="path">Restore backup &rsaquo; Open a backup file</span>.</li>
+          </ol>
+          <p>Using a Google Site? Replace the embed code with the new file, then restore your backup file, because a new embed starts with empty storage.</p>
+        </div></details>
+      </div>
+      <h3 class="cat">What's new</h3>
+      <div class="ver"><b>Version 1.0</b>
+        <ul>
+          <li>Help line and hall pass with live timers, a teacher PIN, and up to 7 classes</li>
+          <li>Typed names or rosters, places that skip the line, and hall pass rules</li>
+          <li>Scene view or a simple List view</li>
+          <li>School name, logo and colors</li>
+          <li>Reports with student reports, Excel download, backup files, and Google Sheets auto-send</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="conH">
+      <h2 id="conH">Contact</h2>
+      <div class="contact">
+        <div class="panel">
+          <p style="margin-top:0">Didn't find your answer? Email Bellwork Labs. Next! is made by a classroom teacher, so please allow a few school days for a reply.</p>
+          <div class="addr" id="addr">BellworkLabs@gmail.com</div>
+          <div class="email">
+            <a class="btn go" id="mailBtn" href="mailto:BellworkLabs@gmail.com?subject=Next!%20help">Email me</a>
+            <button class="btn plain" type="button" id="copyBtn">Copy address</button>
+          </div>
+          <div class="warn"><b>Please don't send student names or reports.</b> Describe the problem, and use made-up names in screenshots if you can.</div>
+        </div>
+        <div class="panel">
+          <b>To help me help you faster, include:</b>
+          <ul class="check">
+            <li>Your computer type (Windows, Mac, Chromebook, or board model)</li>
+            <li>Your browser (Chrome, Edge, Safari...)</li>
+            <li>How you open Next! (the file, or a Google Site)</li>
+            <li>What you tapped and what happened</li>
+            <li>A screenshot, if you can</li>
+          </ul>
+          <p style="margin-bottom:0">You can also ask on the <b>Q&amp;A</b> tab of the Next! page on Teachers Pay Teachers.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Next! by Bellwork Labs &middot; Help and support</span>
+    <a href="#top">Back to top</a>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  var qs = Array.prototype.slice.call(document.querySelectorAll('details.q'));
+  var input = document.getElementById('q'), none = document.getElementById('noHits');
+  var cats = Array.prototype.slice.call(document.querySelectorAll('#faq h3.cat'));
+  qs.forEach(function(d){ d.dataset.text = d.textContent.toLowerCase(); d.querySelector('summary').dataset.raw = d.querySelector('summary').textContent; });
+  function esc(s){ return s.replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function run(){
+    var v = input.value.trim().toLowerCase(), words = v.split(/\s+/).filter(Boolean), hits = 0;
+    qs.forEach(function(d){
+      var s = d.querySelector('summary'), ok = words.every(function(w){ return d.dataset.text.indexOf(w) >= 0; });
+      d.style.display = ok ? '' : 'none';
+      if(ok) hits++;
+      var raw = s.dataset.raw, html = esc(raw);
+      if(words.length){ words.forEach(function(w){ var re = new RegExp('(' + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig'); html = html.replace(re, '<mark>$1</mark>'); }); }
+      s.innerHTML = html;
+      if(words.length && ok && hits <= 3) d.open = true; else if(!words.length) d.open = false;
+    });
+    cats.forEach(function(h){
+      var n = h.nextElementSibling, any = false;
+      while(n && n.tagName !== 'H3' && n.tagName !== 'SECTION'){ if(n.classList && n.classList.contains('q') && n.style.display !== 'none') any = true; n = n.nextElementSibling; }
+      h.style.display = any ? '' : 'none';
+    });
+    var start = document.getElementById('start'), upd = document.getElementById('updates');
+    none.style.display = words.length && !hits ? 'block' : 'none';
+    start.style.display = words.length ? 'none' : '';
+  }
+  input.addEventListener('input', run);
+  // open a question when its category link is used
+  function openFromHash(){
+    var h = location.hash.slice(1); if(!h) return;
+    var el = document.getElementById(h);
+    if(el && el.classList.contains('cat')){ var n = el.nextElementSibling; if(n && n.tagName === 'DETAILS') n.open = true; }
+  }
+  window.addEventListener('hashchange', openFromHash); openFromHash();
+  var toast = document.getElementById('toast'), tt;
+  function say(m){ toast.textContent = m; toast.classList.add('on'); clearTimeout(tt); tt = setTimeout(function(){ toast.classList.remove('on'); }, 2200); }
+  document.getElementById('copyBtn').onclick = function(){
+    var a = 'BellworkLabs@gmail.com';
+    function fb(){ var r = document.createRange(); r.selectNodeContents(document.getElementById('addr')); var s = getSelection(); s.removeAllRanges(); s.addRange(r); var ok = false; try{ ok = document.execCommand('copy'); }catch(e){} say(ok ? 'Email address copied' : 'Press Ctrl+C to copy'); }
+    try{ navigator.clipboard.writeText(a).then(function(){ say('Email address copied'); }, fb); }catch(e){ fb(); }
+  };
+})();
+</script>
+</body>
+</html>
